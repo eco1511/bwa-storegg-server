@@ -1,0 +1,1 @@
+wen: node ./bin/www
