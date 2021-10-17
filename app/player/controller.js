@@ -246,11 +246,12 @@ module.exports = {
 
   editProfile: async (req, res, next) => {
     try {
-      const { name = "", phoneNumber = "" } = req.body
+      const { name = "", username = "" ,phoneNumber = "" } = req.body
 
       const payload = {}
 
       if (name.length) payload.name = name
+      if(username.length) payload.username = username
       if (phoneNumber.length) payload.phoneNumber = phoneNumber
 
       if (req.file) {
@@ -286,6 +287,7 @@ module.exports = {
             data: {
               id: player.id,
               name: player.name,
+              username: player.username,
               phoneNumber: player.phoneNumber,
               avatar: player.avatar,
             }
@@ -305,6 +307,7 @@ module.exports = {
           data: {
             id: player.id,
             name: player.name,
+            username: player.username,
             phoneNumber: player.phoneNumber,
             avatar: player.avatar,
           }
