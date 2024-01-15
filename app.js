@@ -41,14 +41,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/adminlte', express.static(path.join(__dirname, '/node_modules/admin-lte/')))
 
-app.use('/', userRouter);
-app.use('/dashboard', dashboardRouter);
-app.use('/category', categoryRouter);
-app.use('/nominal', nominalRouter);
-app.use('/voucher', voucherRouter);
-app.use('/bank', bankRouter);
-app.use('/payment', paymentRouter);
-app.use('/transaction', transactionRouter);
+app.use('/.netlify', userRouter);
+app.use('/.netlify/dashboard', dashboardRouter);
+app.use('/.netlify/category', categoryRouter);
+app.use('/.netlify/nominal', nominalRouter);
+app.use('/.netlify/voucher', voucherRouter);
+app.use('/.netlify/bank', bankRouter);
+app.use('/.netlify/payment', paymentRouter);
+app.use('/.netlify/transaction', transactionRouter);
 //api
 app.use(`${URL}/players`, playerRouter);
 app.use(`${URL}/auth`, authRouter);
